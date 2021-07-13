@@ -1,21 +1,49 @@
-# vcodes.js
-<a href="https://vcodes.xyz/dc" target="_blank"><img src="https://img.devsforum.net/tr/img/h1Z2X3.png" alt="Join our discord" width="256"></a><br>
-**Support:** [https://vcodes.xyz/dc](https://vcodes.xyz/dc) <br>
-**NPM:** [npmjs.com/package/vcodes.js](https://www.npmjs.com/package/vcodes.js)<br>
+*NPM:** [npmjs.com/package/finnworld.js](https://www.npmjs.com/package/finnworld.js/)<br>
+
+
+<a href="https://www.npmjs.com/package/finnworld.js/"><img src="https://img.shields.io/npm/v/disbotlist.svg?maxAge=3600" alt="NPM version" /></a>
+<a href="https://www.npmjs.com/package/finnworld.js"><img src="https://img.shields.io/npm/dt/disbotlist.svg?maxAge=3600" alt="NPM downloads" /></a>
+
+
+<a href="https://nodei.co/npm/finnworld.js"><img src="https://nodei.co/npm/finnworld.js.png?downloads=true&stars=true" alt="npm installnfo" /></a>
+
 
 ## Installation
-*If you have trouble with the installation, please feel free to visit our [discord](https://vcodes.xyz/dc) address.*
-- `npm i vcodes.js`
+*If you have trouble with the installation, please feel free to visit our [discord](https://discord.gg/qNVHMzRsJ9) address.*
+- `npm i finnworld.js`
 
+#### 1. What Is FinnWorld 
+    Ans: Finnrorld Is The Discord Bot List Created By Chinmay Jha#1234 and Vidul.H.B#1111 
+
+#### 2. How do I install it?
+  Ans: JavaSciprt: npm i disbotlist or npm install disbotlist
+            Python: pip install disbotlist
+
+#### 3. Does it have any GitHub Repository?
+  Ans: Yes It Is [Here](https://github.com/VidulHB/finnworld.js)
+
+#### 4. What is it's uses?
+  Ans: To get the daily vote count, server count and information about your bot.
+Examples:  avatar, botID, discriminator, shortDescription, prefix, votes, serverCount, ownerID, owner, co-owners, tags, longDescription, certificate etc.
+
+#### 5. How can I get my bot's server count?
+  `Ans: JavaScript:`
 ```js
-const vCodes = require("vcodes.js");
-const dbl = new vCodes("TOKEN-HERE", client);
+const finnworld = require("finnworld.js");
+const dbl = new finnworld("TOKEN-HERE", client);
+                  ^--- this token is not the token you get from discord its the token you get from our website
 
 client.on("ready", async () => {
   dbl.serverCount();
-  // console.log("Server count posted")
-  
-  let hasVote = await dbl.hasVoted("714451348212678658");
+  console.log("Server count posted")
+
+```
+ 
+
+#### 6. How can I get my bot's vote count?
+  `Ans:`
+```js
+let hasVote = await dbl.hasVoted("Your-bot-id");
   if(hasVote === true) {
     console.log("Voted")
   } else {
@@ -23,19 +51,43 @@ client.on("ready", async () => {
   }
   
   
-  let search = await dbl.search("779641401482805289")
+  let search = await dbl.search("Your-bot-id")
   console.log(search)
-  /*
+
+```
+
+#### 7. Full Example?
+  `Ans:`
+```js
+const finnworld = require("finnworld.js");
+const dbl = new finnworld("TOKEN-HERE", client);
+
+client.on("ready", async () => {
+  dbl.serverCount();
+  console.log("Server count posted")
+  
+  let hasVote = await dbl.hasVoted("your-bot-id");
+  if(hasVote === true) {
+    console.log("Voted")
+  } else {
+    console.log("Vote please.")
+  }
+  
+  
+  let search = await dbl.search("Your-bot-id")
+  console.log(search)
+
+  /* SearchResults
   {
-    avatar: 'https://cdn.discordapp.com/avatars/779641401482805289/8cf145d2189d76cc110101b7a69c6b20.webp',
-    botID: '779641401482805289',
-    username: 'Allegro',
-    discrim: '2830',
-    shortDesc: 'Cheer up your own server with 🎶',
+    avatar: '',
+    botID: '',
+    username: '',
+    discrim: '',
+    shortDesc: '',
     prefix: '! [changable]',
     votes: 31,
-    ownerID: '714451348212678658',
-    owner: 'Claudette',
+    ownerID: '',
+    owner: '',
     coowners: [ '' ],
     tags: [ 'Moderation', 'NSFW', 'Music' ],
     longDesc: longDesc,
@@ -43,5 +95,5 @@ client.on("ready", async () => {
   }
   */
 });
-```
 
+```
