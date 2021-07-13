@@ -1,8 +1,8 @@
 {
-  "name": "vcodes.js",
+  "name": "finnworld.js",
   "version": "0.0.1-alpha",
-  "description": "A official vcodes.xyz api.",
-  "main": "vcodes.js",
+  "description": "A official finnworld.tk api.",
+  "main": "finnworld.js",
   "scripts": {
     "test": "!vote"
   },
